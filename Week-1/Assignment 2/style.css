@@ -1,0 +1,149 @@
+* {
+    font-family: sans-serif;
+    background-color: #f9f5f6;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.header__menu {
+    display: flex;
+    list-style-type: none;
+    background-color: white;
+}
+
+.header__menu-item {
+    margin-left: 15px;
+    background-color: white;
+
+    & a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Expand to push footer to the bottom */
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-top: 0%;
+    background-color: #f8e8ee;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__box-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0px 40px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+    gap: 10px;
+    & p {
+        background-color: inherit;
+    }
+}
+
+.main__box {
+
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    border-radius: 20px;
+    height: 400px;
+    background-color: #f8e8ee;
+    align-items: center;
+    justify-content: center;
+
+    & p {
+        font-size: 22px;
+        padding: 2px;
+    }
+}
+
+.main__img-card {
+    display: flex;
+    height: 350px;
+    
+
+    & img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-bottom-left-radius: 20px; /* Adjust as needed */
+        border-bottom-right-radius: 20px; /* Adjust as needed */
+    }
+}
+
+.main__load-btn {
+    padding: 10px;
+    color: #645353;
+    font-weight: bold;
+    border: 4px solid #645353;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+footer {
+    /* position: relative; Required for child element positioning */
+    bottom: 0;
+    /* Position the footer at the bottom */
+    width: 100%;
+    size: 12px;
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 0px;
+}
+
+@media (max-width: 650px) {
+    .header__nav {
+        overflow: auto;
+    }
+
+    .header__menu {
+        padding: 0%;
+        margin: 0%
+    }
+    .header__menu-item {
+        margin-left: 10px;
+    
+        & a {
+            font-size: 12px;
+        }
+    }
+
+    .main__box {
+        width: 90%;
+    }
+}
