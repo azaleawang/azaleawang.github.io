@@ -1,79 +1,80 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week 1- Assignment 2</title>
-    <link rel="icon" type="image/x-icon" href="img/ChimimoIcon.jpg">
+    <link rel="icon" type="image/x-icon" href="img/ChimimoIcon.jpg" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- header start -->
     <header class="header__nav">
-        <div class="header__nav header__nav--left">
-            <!-- <p class="header__name">Chimimo</p> -->
-            <img class="header__logo" src="img/Chimimo_logo.png" alt="Chimimo img" style="height: 35px" />
-        </div>
-        <nav class="header__nav header__nav--right">
-            <ul class="header__menu">
-                <li class="header__menu-item"><a href="#">Home</a></li>
-                <li class="header__menu-item"><a href="#">About</a></li>
-                <li class="header__menu-item"><a href="#">Account</a></li>
-                <li class="header__menu-item"><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="header__nav--left">
+        <!-- <p class="header__name">Chimimo</p> -->
+        <img
+          class="header__logo"
+          src="img/Chimimo_logo.png"
+          alt="Chimimo img"
+          style="height: 35px"
+        />
+      </div>
+      <nav class="header__nav--right">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a href="#">Home</a></li>
+          <li class="header__menu-item"><a href="#">About</a></li>
+          <li class="header__menu-item"><a href="#">Account</a></li>
+          <li class="header__menu-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <!-- header end -->
 
     <!-- main start -->
     <main class="main">
-        <h1 class="header__title">Let's Meet ちみも !</h1>
+      <h1 class="header__title">Let's Meet ちみも !</h1>
 
-        <h2 class="main__title">ちみも Families</h2>
-        <!-- flexbox -->
-        <div class="main__box-container">
-            <div class="main__box">
-                <p>鬼神家 &amp; 地獄さん</p>
-                <div class="main__img-card">
-                    <img src="img/family6.jpg" alt="fam1">
-                </div>
-            </div>
-            <div class="main__box">
-                <p>シャレオツ、おもち、ぶち</p>
-                <div class="main__img-card">
-                    <img src="img/family2.jpg" alt="fam2">
-                </div>
-            </div>
-            <div class="main__box">
-                <p>長老(?)</p>
-                <div class="main__img-card">
-                    <img src="img/family4.jpg" alt="fam3">
-                </div>
-            </div>
-            <div class="main__box">
-                <p>地獄さん &amp; ちみも</p>
-                <div class="main__img-card">
-                    <img src="img/family3.jpg" alt="fam4">
-                </div>
-            </div>
+      <h2 class="main__title">ちみも Families</h2>
+      <!-- flexbox -->
+      <div class="main__box-container">
+        <div class="main__box">
+          <p>鬼神家 &amp; 地獄さん</p>
+          <div class="main__img-card">
+            <img src="img/family6.jpg" alt="fam1" />
+          </div>
         </div>
-        <div class="main__bottom-block">
-            <button class="main__load-btn" name="button" onclick="">To top</button>
+        <div class="main__box">
+          <p>シャレオツ、おもち、ぶち</p>
+          <div class="main__img-card">
+            <img src="img/family2.jpg" alt="fam2" />
+          </div>
         </div>
+        <div class="main__box">
+          <p>長老(?)</p>
+          <div class="main__img-card">
+            <img src="img/family4.jpg" alt="fam3" />
+          </div>
+        </div>
+        <div class="main__box">
+          <p>地獄さん &amp; ちみも</p>
+          <div class="main__img-card">
+            <img src="img/family3.jpg" alt="fam4" />
+          </div>
+        </div>
+      </div>
+      <div class="main__bottom-block">
+        <button class="main__load-btn" name="button" onclick="">To top</button>
+      </div>
     </main>
     <!-- main end -->
-    <footer>
-        Developed by Leah (2023.09)
-    </footer>
+    <footer> Developed by Leah (2023.09) </footer>
 
     <script>
-        document.querySelector(".main__load-btn").onclick = () => {
-            window.location.href = "#";
-        };
+      document.querySelector(".main__load-btn").onclick = () => {
+        window.location.href = "#";
+      };
     </script>
-</body>
-
+  </body>
 </html>

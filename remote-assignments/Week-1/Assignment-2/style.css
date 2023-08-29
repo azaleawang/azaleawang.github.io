@@ -1,6 +1,7 @@
 * {
     font-family: sans-serif;
     background-color: #f9f5f6;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,22 +11,30 @@ body {
 }
 
 .header__nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px;
     background-color: white;
+    height: 60px;
+    z-index: 1000;
+
+    & * {
+        background-color: inherit;
+        display: flex;
+        /* position: static; */
+    }
 }
 
 .header__menu {
-    display: flex;
     list-style-type: none;
-    background-color: white;
 }
 
 .header__menu-item {
     margin-left: 15px;
-    background-color: white;
 
     & a {
         text-decoration: none;
@@ -35,6 +44,8 @@ body {
 }
 
 .main {
+    position: relative;
+    top: 60px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -62,15 +73,14 @@ h1 {
     margin: 20px 0px 40px;
     justify-content: center;
     align-items: center;
-    /* background-color: aquamarine; */
     gap: 10px;
+
     & p {
         background-color: inherit;
     }
 }
 
 .main__box {
-
     display: flex;
     flex-direction: column;
     width: 48%;
@@ -89,14 +99,13 @@ h1 {
 .main__img-card {
     display: flex;
     height: 350px;
-    
 
     & img {
         object-fit: cover;
         height: 100%;
         width: 100%;
-        border-bottom-left-radius: 20px; /* Adjust as needed */
-        border-bottom-right-radius: 20px; /* Adjust as needed */
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 }
 
@@ -108,22 +117,21 @@ h1 {
     border-radius: 20px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
 }
 
-
 footer {
-    /* position: relative; Required for child element positioning */
+    position: relative;
+    top: 120px;
     bottom: 0;
     /* Position the footer at the bottom */
     width: 100%;
     size: 12px;
     background-color: white;
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px 0px 0px;
+    /* margin: 50px 0px 0px; */
 }
 
 @media (max-width: 650px) {
@@ -133,11 +141,12 @@ footer {
 
     .header__menu {
         padding: 0%;
-        margin: 0%
+        margin: 0%;
     }
+
     .header__menu-item {
         margin-left: 10px;
-    
+
         & a {
             font-size: 12px;
         }
