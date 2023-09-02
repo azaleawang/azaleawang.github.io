@@ -11,7 +11,7 @@ body {
 }
 
 .header__nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     display: flex;
@@ -25,7 +25,6 @@ body {
     & * {
         background-color: inherit;
         display: flex;
-        /* position: static; */
     }
 }
 
@@ -44,15 +43,11 @@ body {
 }
 
 .main {
-    position: relative;
-    top: 60px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    /* flex: 1; */
     /* Expand to push footer to the bottom */
-    margin: 0;
     align-items: center;
-    justify-content: center;
 }
 
 h1 {
@@ -111,6 +106,7 @@ h1 {
 
 .main__load-btn {
     padding: 10px;
+    margin-bottom: 40px;
     color: #645353;
     font-weight: bold;
     border: 4px solid #645353;
@@ -120,18 +116,18 @@ h1 {
 }
 
 footer {
-    position: relative;
-    top: 120px;
+
     bottom: 0;
     /* Position the footer at the bottom */
     width: 100%;
-    size: 12px;
+    font-size: 12px;
     background-color: white;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: 50px 0px 0px; */
+    margin-top: auto;
+    /* aligns the buttons with the bottom edge of a column, regardless of the amount of content inside the column */
 }
 
 @media (max-width: 650px) {
