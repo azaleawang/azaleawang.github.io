@@ -3,6 +3,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 const app = express();
+const ip = '127.0.0.1';
 const port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
@@ -51,8 +52,8 @@ app.get("/trackName", (req, res) => {
   res.redirect("/myName");
 });
 
-app.listen(port, () => {
-  console.log(`Plz visit http://localhost:${port}/`);
+app.listen(port, ip, () => {
+  console.log(`Plz visit http://${ip}:${port}/`);
 });
 
 // Running Locally
