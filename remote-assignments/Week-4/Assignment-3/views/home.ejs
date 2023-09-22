@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week Assignment</title>
+    <style>
+        * {
+            text-align: center;
+            margin: 8px;
+        }
+
+        form {
+            margin: 15px;
+        }
+
+        input {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>登入系統</h1>
+    <h2>*新朋友請先至下方註冊*</h2>
+    <form method="post" action="/signin" onsubmit="return validateSignIn()">
+        <label for="loginEmail">信箱</label>
+        <input type="text" name="email" id="loginEmail">
+        <br>
+        <label for="loginPassword">密碼</label>
+        <input type="password" name="password" id="loginPassword">
+        <br>
+        <input type="submit" value="登入">
+    </form>
+    <br>
+    <hr>
+    <h1>註冊新帳號</h1>
+    <form method="post" action="/signup" onsubmit="return validateSignUp()">
+        <label for="username">名稱</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="email">信箱</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="password">密碼</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="註冊">
+    </form>
+
+    <script>
+        function hintAlert(hint) {
+            if (hint != "None") {
+                alert(hint);
+                console.log("show hint");
+                window.location.href = "/";
+            }
+        }
+        hintAlert("<%= hint %>");
+
+        function validateSignIn() {
+            // check email / username/ password filled 
+            let profile = document.querySelector("#loginEmail").value?.trim() &&
+                document.querySelector("#loginPassword").value?.trim();
+
+            if (!profile) {
+                alert('請確認已填寫所有登入資訊（不可輸入空白）');
+                return false; // Prevent form submission
+            } else return true; // Allow form submission
+        }
+
+        function validateSignUp() {
+            // check name / username/ password filled 
+            let profile = document.querySelector("#email").value?.trim() &&
+                document.querySelector("#username").value?.trim() &&
+                document.querySelector("#password").value?.trim();
+
+            if (!profile) {
+                alert('請確認已填寫所有註冊資訊（不可輸入空白）');
+                return false; // Prevent form submission
+            } else return true; // Allow form submission
+        }
+    </script>
+
+</body>
+
+</html>
