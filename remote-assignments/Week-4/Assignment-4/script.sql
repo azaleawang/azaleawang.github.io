@@ -6,9 +6,7 @@ SELECT
     user.email AS email
 FROM
     articles
-    INNER JOIN user ON articles.authorId = user.id
-WHERE
-    email = "c@google.com";
+    INNER JOIN user ON articles.authorId = user.id;
 
 -- select articles from 7th to 12th sorted by id.
 SELECT

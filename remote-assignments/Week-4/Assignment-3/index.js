@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 // member route
 app.get("/member/:userId", async (req, res) => {
   // const { id, username, email } = await getMemberInfo(req.query.userId);
-  const queryId = req.params.userId
+  const queryId = req.params.userId;
   const { id, username, email } = await getMemberInfo(queryId);
   if (req.cookies.logIn && req.cookies.id === queryId) {
     res.send(`
@@ -60,17 +60,18 @@ app.post("/signup", async (req, res) => {
   if (register) {
     // email已存在 -> return to home
     res.render("home", { hint: "此帳號已經被註冊" });
+  }
+
+  // 帳戶名稱不存在-> insert data into DB
+  const userId = await registerMember(username, email, password);
+  console.log("Your user id =", userId);
+  
+  if (userId) {
+    // 成功儲存資料並得到user id
+    res.render("home", { hint: "使用者註冊成功，請登入網站" });
   } else {
-    // 帳戶名稱不存在-> insert data into DB
-    const userId = await registerMember(username, email, password);
-    console.log("Your user id =", userId);
-    if (userId) {
-      // 成功儲存資料並得到user id
-      res.render("home", { hint: "使用者註冊成功，請登入網站" });
-    } else {
-      // DB fails to return user id
-      res.render("home", { hint: "使用者註冊失敗，server發生錯誤" });
-    }
+    // DB fails to return user id
+    res.render("home", { hint: "使用者註冊失敗，server發生錯誤" });
   }
 });
 

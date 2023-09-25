@@ -12,7 +12,7 @@ const pool = mysql
   })
   .promise();
 
-export async function verifyMember(email, password = undefined) {
+export async function verifyMember(email, password) {
   let user;
   if (password) {
     // 檢查登入資訊是否正確
