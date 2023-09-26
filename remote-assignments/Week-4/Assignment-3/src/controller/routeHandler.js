@@ -1,4 +1,4 @@
-import { verifyMember, registerMember, getMemberInfo } from "./dbHandler.js";
+import { registerMember, getMemberInfo, verifySignin, verifyRegister } from "./dbHandler.js";
 
 export async function memberGet(req, res) {
   const queryId = req.params.userId;
@@ -20,7 +20,7 @@ export async function signupPost(req, res) {
   console.log("Email:", email);
   console.log("Password:", password);
 
-  let register = await verifyMember(email);
+  let register = await verifyRegister(email);
   console.log("register? ", register);
   if (register) {
     // email已存在 -> return to home
@@ -42,7 +42,7 @@ export async function signupPost(req, res) {
 
 export async function signinPost(req, res) {
   const { email, password } = req.body;
-  const user = await verifyMember(email, password);
+  const user = await verifySignin(email, password);
   if (user) {
     console.log("user", user);
     req.session.isAuth = true;
