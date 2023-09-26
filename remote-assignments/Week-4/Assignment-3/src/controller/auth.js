@@ -4,6 +4,6 @@ export default (req, res, next) => {
     next();
   } else {
     req.session.error = "You have to Login first";
-    res.render("home", { hint: "請先登入" });
+    res.render("home", { hint: req.session.error });
   }
 };
